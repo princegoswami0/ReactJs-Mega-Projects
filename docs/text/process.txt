@@ -1,0 +1,59 @@
+Project Process text file
+
+
+-------------------------------------------------------------------------------
+
+🟢 Step 1 – Frontend Setup
+
+Initialized Vite + React project with Tailwind CSS.
+Created clean folder structure (components, pages, routes, assets).
+Defined all routes: /login, /signup, /admin etc .
+Ran npm run dev → Verified Tailwind & routes working.
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+✅ step 2 : Backend Setup & User Module
+Setup Express server with clean folder structure.
+Configured MongodB Compass (later Atlas 
+ ## 1 issue "- connect ECONNREFUSED 127.0.0.1:27017, connect ECONNREFUSED ::1:27017
+
+There was a problem connecting to localhost:27017/projectteam) with .env setup.
+Added User model, controller, and routes (register, login, profile).
+Integrated bcrypt for password hashing & JWT for authentication.
+Implemented auth middleware & role-based access (admin vs member).
+
+Problems & Fixes
+❌ DB connection error (Atlas URI + whitelist) → ✅ Fixed by whitelisting IP & updating .env.
+❌ userId not defined bug → ✅ Fixed by using id from JWT .
+
+Status: User register/login/profile working. JWT auth functional. Data persisting in Atlas.
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+✅ step 3 : Testing & Image Upload Feature
+
+Tested all auth routes in Postman (register/login/profile).
+Verified default role assignment (member) & admin invite token flow.
+Debugged route/controller issues during Postman tests.
+Added /upload-image route with Multer middleware for file uploads.
+Served /uploads folder statically in server.js.
+Generated proper file URL → req.protocol + '://' + req.get('host') + '/uploads/<filename>'.
+
+Problems & Fixes
+
+❌ Wrong URL returned (http://{req.get('host')}/uploads/...) → ✅ Fixed by including req.protocol.
+
+❌ Images not accessible in browser → ✅ Fixed by app.use('/uploads', express.static('uploads')).
+
+Status: Auth + role-based system + image upload fully functional & tested via Postman.
+
+--------------------------------------------------------------------------------------------
