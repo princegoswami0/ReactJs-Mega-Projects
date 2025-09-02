@@ -1,0 +1,6 @@
+POSTMAN API TESTING 
+
+checking post man api we get role based register if user have not any token then it will be count as memebr by default 
+chacking login api 
+
+create all controler s and then chekc one by one topstamn tkae screnshot get eoor in auth routes and theafter completing contrllwe we startauth .routes /uploadimage then uplaod image and then server .js and then uplaod midddle ware and then get info and then uplaod image from multer postmna tersting colcusion finee ee scrrenshot 
