@@ -54,6 +54,7 @@ Problems & Fixes
 
 ❌ Images not accessible in browser → ✅ Fixed by app.use('/uploads', express.static('uploads')).
 
+
 Status: Auth + role-based system + image upload fully functional & tested via Postman.
 
 --------------------------------------------------------------------------------------------
